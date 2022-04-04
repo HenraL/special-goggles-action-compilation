@@ -48,16 +48,18 @@ jobs:
         run: "ls"
       - name: Attempting to create a folder on the root
         run: "mkdir tmp"
-      - name: Ouputing Current directory
+      - name: Outputting Current directory
         run: "pwd"
       - name: navigating to the c folder
         run: "cd files/c"
-      - name: Compiling program
-        run: "make"
-      - name: Cleaning up
-        run: "rm *.o"
-      - name: Testing program
-        run: "./${EXECUTABLES}"
+      - name: Outputting Current directory
+        run: "pwd"
+      # - name: Compiling program
+      #   run: "make"
+      # - name: Cleaning up
+      #   run: "rm *.o"
+      # - name: Testing program
+      #   run: "./${EXECUTABLES}"
 
       # - name: setting up docker
       # - name: setting up environement variables
