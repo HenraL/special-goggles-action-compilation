@@ -44,10 +44,9 @@ jobs:
         uses: actions/checkout@v3
         with:
           fetch-depth: 0
+      - name: Attempting to list directory
+        run: "ls"
+      - name: Attempting to create a folder on the root
+        run: "mkdir tmp"
       # - name: setting up docker
       # - name: setting up environement variables
-
-      # - name: Attempting to create a folder on the root
-      #   run: "mkdir tmp"
-      # - name: Attempting to list directory
-      #   run: "ls"
