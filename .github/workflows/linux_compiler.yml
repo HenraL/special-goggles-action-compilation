@@ -35,6 +35,7 @@ jobs:
       # EXECUTABLES: "my_sokoban"
       E: 10
     steps:
+      run: "echo hello world"
       # - name: setting up docker
       - name: fetching repository content
         - uses: actions/checkout@v3
