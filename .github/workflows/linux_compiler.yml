@@ -1,0 +1,13 @@
+##
+## EPITECH PROJECT, 2021
+## special-goggles-action-compilation
+## File description:
+## windows_compiler.yml
+##
+
+name: windows_compiler
+on: [push, pull_request]
+jobs:
+  check_required_dependencies:
+    - name: setting up docker
+      runs
