@@ -35,15 +35,19 @@ jobs:
       # EXECUTABLES: "my_sokoban"
       # E: 10
     steps:
-      run: "echo hello world"
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - name: Hello World
+        run: "echo hello world"
       # - name: setting up docker
-      - name: fetching repository content
-        - uses: actions/checkout@v3
-          with:
-            fetch-depth: 0
-      - name: setting up environement variables
+      # - name: fetching repository content
+        # - uses: actions/checkout@v3
+          # with:
+            # fetch-depth: 0
+      # - name: setting up environement variables
 
-      - name: Attempting to create a folder on the root
-        run: "mkdir tmp"
-      - name: Attempting to list directory
-        run: "ls"
+      # - name: Attempting to create a folder on the root
+      #   run: "mkdir tmp"
+      # - name: Attempting to list directory
+      #   run: "ls"
