@@ -10,5 +10,13 @@ on: [push, pull_request]
 jobs:
   check_required_dependencies:
     - name: setting up docker
+    runs-on: ubuntu-latest
+    - name: setting up environement variables
+      env:
+        # MIRROR_URL: git@github.com:EpitechPromo2026/B-DOP-200-PAR-2-1-chocolatine-thomas.tran.git
+        MIRROR_URL: git@github.com:EpitechPromo2026/B-DOP-200-PAR-2-1-chocolatine-henry.letellier.git
+        EXECUTABLES: "my_sokoban"
+    - name: Attempting to create a folder on the root
       run: "mkdir tmp"
+    - name: Attempting to list directory
       run: "ls"
