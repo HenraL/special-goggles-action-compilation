@@ -32,7 +32,7 @@ jobs:
     # env:
       # MIRROR_URL: git@github.com:EpitechPromo2026/B-DOP-200-PAR-2-1-chocolatine-thomas.tran.git
       # MIRROR_URL: git@github.com:EpitechPromo2026/B-DOP-200-PAR-2-1-chocolatine-henry.letellier.git
-      # EXECUTABLES: "my_sokoban"
+      EXECUTABLES: "hw.out"
       # E: 10
     steps:
       - uses: actions/checkout@v3
@@ -48,5 +48,15 @@ jobs:
         run: "ls"
       - name: Attempting to create a folder on the root
         run: "mkdir tmp"
+      - name: Ouputing Current directory
+        run: "pwd"
+      - name: navigating to the c folder
+        run: "cd files/c"
+      - name: Compiling program
+        run: "make"
+      - name: Cleaning up
+        run: "rm *.o"
+      - name: Testing program
+        run: "./${EXECUTABLES}"
       # - name: setting up docker
       # - name: setting up environement variables
