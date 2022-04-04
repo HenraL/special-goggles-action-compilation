@@ -10,4 +10,5 @@ on: [push, pull_request]
 jobs:
   check_required_dependencies:
     - name: setting up docker
-      runs
+      run: "mkdir tmp"
+      run: "ls"
