@@ -5,18 +5,43 @@
 ## windows_compiler.yml
 ##
 
+# name: GitHub Actions Demo
+# on: [push, pull_request]
+# jobs:
+#   compile_c_for_windows:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
+#       - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
+#       - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
+#       - name: Check out repository code
+#         uses: actions/checkout@v3
+#       - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
+#       - run: echo "🖥️ The workflow is now ready to test your code on the runner."
+#       - name: List files in the repository
+#         run: |
+#           ls ${{ github.workspace }}
+#       - run: echo "🍏 This job's status is ${{ job.status }}."
+
+
 name: windows_compiler
 on: [push, pull_request]
 jobs:
   check_required_dependencies:
-    - name: setting up docker
     runs-on: ubuntu-latest
-    - name: setting up environement variables
-      env:
-        # MIRROR_URL: git@github.com:EpitechPromo2026/B-DOP-200-PAR-2-1-chocolatine-thomas.tran.git
-        MIRROR_URL: git@github.com:EpitechPromo2026/B-DOP-200-PAR-2-1-chocolatine-henry.letellier.git
-        EXECUTABLES: "my_sokoban"
-    - name: Attempting to create a folder on the root
-      run: "mkdir tmp"
-    - name: Attempting to list directory
-      run: "ls"
+    steps:
+      # - name: setting up docker
+      - name: fetching repository content
+        - uses: actions/checkout@v3
+          with:
+            fetch-depth: 0
+      - name: setting up environement variables
+        env:
+          # MIRROR_URL: git@github.com:EpitechPromo2026/B-DOP-200-PAR-2-1-chocolatine-thomas.tran.git
+          # MIRROR_URL: git@github.com:EpitechPromo2026/B-DOP-200-PAR-2-1-chocolatine-henry.letellier.git
+          # EXECUTABLES: "my_sokoban"
+          E: 10
+      - name: Attempting to create a folder on the root
+        run: "mkdir tmp"
+      - name: Attempting to list directory
+        run: "ls"
