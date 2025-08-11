@@ -35,13 +35,13 @@ jobs:
       EXECUTABLES: "hw.out"
       # E: 10
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           fetch-depth: 0
       - name: Hello World
         run: "echo hello world"
       - name: fetching repository content
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           fetch-depth: 0
       - name: Listing content of current directory
